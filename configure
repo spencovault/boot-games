@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
 # detecting distro, getting package manager + deps
-if [[ $(uname -a) != *"arch"* ]]; then
+if [[ $(uname -a) == *"arch"* ]]; then
     pkgman=pacman
     flags="-S"
     deps=$(cat pacman-deps.txt)
