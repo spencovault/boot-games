@@ -4,11 +4,11 @@
 if [[ $(uname -a) == *"arch"* ]]; then
     pkgman=pacman
     flags="-S"
-    deps=$(cat pacman-deps.txt)
+    deps=$(cat deps/pacman.txt)
 else
     pkgman=apt-get
     flags="install"
-    deps=$(cat apt-deps.txt)
+    deps=$(cat deps/apt.txt)
 fi
 
 # if the user ran this script as sudo
