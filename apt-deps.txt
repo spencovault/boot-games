@@ -1,0 +1,12 @@
+bochs
+bochs-sdl
+build-essential
+gcc
+gcc-multilib
+gdb
+gnu-efi
+grub-pc-bin
+make
+nasm
+qemu
+xorriso
