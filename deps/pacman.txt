@@ -1,0 +1,10 @@
+bochs
+base-devel
+gcc
+gcc-multilib
+gdb
+gnu-efi-libs
+make
+nasm
+qemu
+xorriso
