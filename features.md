@@ -76,3 +76,4 @@ that my games are not boring.
     * T60.7 (2P) Implement a simple menu to start a new game.
     * T60.8 (2P) Implement a score display so the user can see their performance.
   * T61 (3P) Investigate how to do header linking for the bootloader compilation.
+  * T62 (4P) Investigate how to use a binary larger than 512B.
