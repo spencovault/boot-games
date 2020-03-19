@@ -33,6 +33,10 @@ can make games.
     * T10.1 (2P) Functionality to change cursor position.
     * T10.2 (1P) Functionality to change symbol at the cursor.
     * T10.3 (2P) Functionality to change foreground and background color at the cursor.
+  * T11 (3P) Ability to easily draw different shapes
+    * T11.1 (1P) Functionality to draw a filled rectangle.
+    * T11.2 (1P) Functionality to draw a line
+    * T11.3 (1P) Functionality to draw a bordered rectangle.
 * U2. As a UI developer I want to be able to create simple menus so that my
 users have a simple and clear interface.
   * T20 (16P) Ability to create buttons and labels that are selectable with
