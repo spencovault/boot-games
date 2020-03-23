@@ -1,4 +1,14 @@
+/**
+    @file input.h
+    @author Brett Salyer
+
+    @brief A library for handling input from the user via keyboard
+        and as well as validating it.
+
+*/
+
 #include "defines.h"
+
 
 // Gets a single keystroke from the user. Returns as a scancode
 char get_keystroke_ascii()
@@ -27,7 +37,6 @@ char get_keystroke_scancode()
 
     return ((char) (input_char >> 8));
 }
-
 
 
 
