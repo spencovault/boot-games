@@ -1,4 +1,14 @@
+/**
+    @file input.h
+    @author Brett Salyer
+
+    @brief A library for handling input from the user via keyboard
+        and as well as validating it.
+
+*/
+
 #include "defines.h"
+#include "input.h"
 
 // Gets a single keystroke from the user. Returns as a scancode
 char get_keystroke_ascii()
@@ -28,12 +38,38 @@ char get_keystroke_scancode()
     return ((char) (input_char >> 8));
 }
 
+// Checks the input keyboard value and compares it to another
+int check_input(char input, char comparing)
+{
+    if (input == comparing)
+    {
+        return 1;
+    }else{
+        return 0;
+    }
+}
 
 
+void on_keypress(char input, char key, void (*f)())
+{
+    if (check_input(input, key))
+    {
+        f();
+    }
+}
 
 // Prints a single character to the terminal (for testing)
-char print_keystroke(char outchar, unsigned short int attr)
+void print_keystroke(char outchar, unsigned short int attr)
 {
+    __asm__("int $0x10"
+            :
+            : "a" ((0x0e << 8) | outchar), "b" (attr));
+}
+
+void print_test()
+{
+    char outchar = 'G';
+    int attr = 0;
     __asm__("int $0x10"
             :
             : "a" ((0x0e << 8) | outchar), "b" (attr));
@@ -46,18 +82,9 @@ void main(void) {
 
     while(1)
     {
-        input = get_keystroke_ascii();
+        input = get_keystroke_scancode();
 
-        if (input == 'A')
-        {
-            // If the scan code entered is equal to the value of LARROW_RELEASE
-            // Print the letter G to quemu
-            print_keystroke('G', 0);
-        }
-        else
-        {
-            print_keystroke(0x00, 0);
-        }    
+        on_keypress(input, UARROW_PRESS, &print_test); 
     }
     
 
