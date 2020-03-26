@@ -1,3 +1,12 @@
+/*
+    File: defines.h
+
+    Description: Includes type definitions for frequently used types
+        as well as definitions for ASCII and scan code characters and 
+        color codes in hexadecimal
+
+*/
+
 // Defines ASCII Codes in hexadecimal
 
 // Control codes
@@ -33,3 +42,13 @@
 #define GS  0x1D
 #define RS  0x1E
 #define US  0x1F
+
+// Scan codes for arrow keys
+#define LARROW_PRESS    0x4B
+#define LARROW_RELEASE  0xCB
+#define RARROW_PRESS    0x4D
+#define RARROW_RELEASE  0xCD
+#define UARROW_PRESS    0x48
+#define UARROW_RELEASE  0xC8
+#define DARROW_PRESS    0x50
+#define DARROW_RELEASE  0xD0    
