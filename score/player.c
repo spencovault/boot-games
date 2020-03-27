@@ -1,16 +1,27 @@
 #include "player.h"
 
-char *getInitial(struct Player currPlayer)
+void player_init(struct Player* player)
+{
+    player->initial[0] = "";
+    player->initial[1] = "";
+    player->initial[2] = "";
+
+    player->currentScore = 0;
+
+    player->highScore = 0;
+}
+
+char *get_initial(struct Player currPlayer)
 {
     return currPlayer.initial;
 }
 
-int *getCurrentScore(struct Player currPlayer)
+int *get_current_score(struct Player currPlayer)
 {
     return currPlayer.currentScore;
 }
 
-int *getHighScore(struct Player currPlayer)
+int *get_high_score(struct Player currPlayer)
 {
     return currPlayer.highScore;
 }
