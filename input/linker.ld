@@ -1,3 +1,6 @@
+// Based on the linker found here:
+// https://stackoverflow.com/questions/27669275/undefined-reference-to-in-os-kernel-linking
+
 OUTPUT_FORMAT("elf32-i386");
 ENTRY(boot_start);
 
@@ -5,6 +8,7 @@ BOOTLOADER_BASE  = 0x7c00;
 BOOTLOADER_RELOC = 0x600;
 SECTOR_SIZE      = 512;
 KERNEL_BASE      = BOOTLOADER_RELOC + SECTOR_SIZE;
+
 
 SECTIONS
 {

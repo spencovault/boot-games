@@ -1,3 +1,6 @@
+; Based on the boot script found here:
+; https://stackoverflow.com/questions/27669275/undefined-reference-to-in-os-kernel-linking
+
 ; These symbols are defined by the linker. We use them to zero BSS section
 extern __bss_start
 extern __bss_sizew
