@@ -49,7 +49,7 @@ int check_input(char input, char comparing)
     }
 }
 
-
+// Assigns a function handler for when a certain input matches a key value
 void on_keypress(char input, char key, void (*f)())
 {
     if (check_input(input, key))
@@ -58,7 +58,7 @@ void on_keypress(char input, char key, void (*f)())
     }
 }
 
-// Prints a single character to the terminal (for testing)
+// [DEBUG] Prints a single character to the terminal (for testing)
 void print_keystroke(char outchar, unsigned short int attr)
 {
     __asm__("int $0x10"
@@ -66,29 +66,14 @@ void print_keystroke(char outchar, unsigned short int attr)
             : "a" ((0x0e << 8) | outchar), "b" (attr));
 }
 
-void print_test()
+int kernelmain()
 {
-    char outchar = 'G';
-    int attr = 0;
-    __asm__("int $0x10"
-            :
-            : "a" ((0x0e << 8) | outchar), "b" (attr));
-}
+    print_keystroke('A', 0);
 
-// Testing done in main()
-void main(void) {
-
-    unsigned short int input;
-
-    while(1)
+    while (1)
     {
-        input = get_keystroke_scancode();
-
-        on_keypress(input, UARROW_PRESS, &print_test); 
+        __asm__("hlt");
     }
-    
 
-    while (1) {
-        __asm__ ("hlt");
-    };
+    return 0;
 }
