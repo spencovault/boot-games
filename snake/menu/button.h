@@ -13,6 +13,8 @@ struct Button {
     int y_pos;
     void (*handler)();
     int is_selected;
+    int default_color;
+    int selected_color;
 };
 
 // Initializes the buttons with the given parameters
@@ -31,4 +33,10 @@ void button_set_pos(struct Button * button, int x, int y);
 void button_set_selected(struct Button * button, int is_selected);
 
 // Sets the function that the button will execute upon being selected
-void button_set_handler(struct Button * button, void (*handler)())
+void button_set_handler(struct Button * button, void (*handler)());
+
+// Sets the color that the button will display as by default
+void set_default_color(int color);
+
+// Sets the color that the button will display as when selected
+void set_selected_color(int color);

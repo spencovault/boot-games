@@ -6,6 +6,8 @@ void button_init(struct Button * button, char * text, int x, int y, void (*handl
     button->y_pos = y;
     button->handler = handler;
     button->is_selected = 0;
+    button->default_color = 15;
+    button->selected_color = 1;
 }
 
 void button_set_x_pos(struct Button * button, int x) {
