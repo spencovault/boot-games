@@ -29,3 +29,6 @@ void button_set_pos(struct Button * button, int x, int y);
 
 // Sets the current state of the button
 void button_set_selected(struct Button * button, int is_selected);
+
+// Sets the function that the button will execute upon being selected
+void button_set_handler(struct Button * button, void (*handler)())
