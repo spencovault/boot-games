@@ -20,3 +20,7 @@ void button_set_pos(struct Button * button, int x, int y) {
     button->x_pos = x;
     button->y_pos = y;
 }
+
+void button_set_selected(struct Button * button, int is_selected) {
+    button->is_selected = is_selected;
+}
