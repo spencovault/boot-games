@@ -16,3 +16,7 @@ void button_set_y_pos(struct Button * button, int y) {
     button->y_pos = y;
 }
 
+void button_set_pos(struct Button * button, int x, int y) {
+    button->x_pos = x;
+    button->y_pos = y;
+}
