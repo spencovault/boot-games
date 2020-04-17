@@ -7,4 +7,5 @@ gnu-efi-libs
 make
 nasm
 qemu
+qemu-arch-extra
 xorriso
