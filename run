@@ -1,0 +1,20 @@
+#!/usr/bin/env bash
+
+BUILD_DIR=build
+
+# building the os.elf file
+make
+
+# Convert os.elf to flat binary file os.bin
+objcopy -Obinary $BUILD_DIR/os.elf $BUILD_DIR/os.bin
+
+# Build 1.44MB disk image
+dd if=/dev/zero of=$BUILD_DIR/disk.img bs=1024 count=1440
+dd if=$BUILD_DIR/os.bin of=$BUILD_DIR/disk.img conv=notrunc
+
+# Split the boot sector from the complete os.bin file
+# These files may not be needed, generate them anyway
+dd if=$BUILD_DIR/os.bin of=$BUILD_DIR/boot.bin bs=512 count=1
+dd if=$BUILD_DIR/os.bin of=$BUILD_DIR/kernel.bin bs=512 seek=1
+
+qemu-system-i386 -fda $BUILD_DIR/disk.img

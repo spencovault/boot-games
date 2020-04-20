@@ -1,7 +1,0 @@
-#!/usr/bin/env bash
-set -eux
-as -ggdb3 --32 -o entry.o entry.S
-gcc -c -ggdb3 -m16 -ffreestanding -fno-PIE -nostartfiles -nostdlib -o rand.o -std=c99 rand.c
-ld -m elf_i386 -o rand.elf -T linker.ld entry.o rand.o
-objcopy -O binary rand.elf rand.img
-qemu-system-x86_64 -drive file=rand.img,format=raw

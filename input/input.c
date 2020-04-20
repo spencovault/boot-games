@@ -66,14 +66,3 @@ void print_keystroke(char outchar, unsigned short int attr)
             : "a" ((0x0e << 8) | outchar), "b" (attr));
 }
 
-int kernelmain()
-{
-    print_keystroke('A', 0);
-
-    while (1)
-    {
-        __asm__("hlt");
-    }
-
-    return 0;
-}

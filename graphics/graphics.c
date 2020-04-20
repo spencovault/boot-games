@@ -36,7 +36,7 @@ void write_char(u8 character, u8 color)
     );
 }
 
-void write_str(char* str, u8 color)
+void write_str(u8* str, u8 color)
 {
     while(str != '\0')
     {
@@ -63,4 +63,3 @@ void test_render(u8 x_pos, u8 y_pos, u8 w, u8 h)
         }
     }
 }
-
