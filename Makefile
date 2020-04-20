@@ -1,5 +1,8 @@
 # compiler settings
 CXX=gcc
+
+# Implented the solution for compiling with these flags found here:
+# https://stackoverflow.com/questions/27669275/undefined-reference-to-in-os-kernel-linking
 CFLAGS=-fno-PIC -g -m16 -ffreestanding -Os -Wall -fomit-frame-pointer
 
 # build directory and included libs
@@ -18,7 +21,7 @@ all: $(OBJ)
 	@echo 'building bootloader'
 	@nasm -f elf32 -Fdwarf -g boot.asm -o $(BUILD_DIR)/boot.o
 	@echo 'linking obj files'
-	ld -melf_i386 -nostartfiles -nostdlib -Tlinker.ld -L $(BUILD_DIR) -o os.elf $(OBJ)
+	@ld -melf_i386 -nostartfiles -nostdlib -Tlinker.ld -L $(BUILD_DIR) -o os.elf $(OBJ)
 
 # compiling all .c files into .o files
 $(BUILD_DIR)/%.o: %.c
