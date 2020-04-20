@@ -45,6 +45,24 @@ void write_str(char* str, u8 color)
     }
 }
 
+void draw_line_x(u8 x_pos, u8 y_pos, u8 end_x, u8 sym, u8 color)
+{
+    set_cursor_pos(x_pos, y_pos);
+    for(; x_pos < end_x; x_pos++)
+    {
+        write_char(sym, color);
+    }
+}
+
+void draw_line_y(u8 x_pos, u8 y_pos, u8 end_y, u8 sym, u8 color)
+{
+    for(; y_pos < end_y; y_pos++)
+    {
+        set_cursor_pos(x_pos, y_pos);
+        write_char(sym, color);
+    }
+}
+
 void draw_box(u8 x_pos, u8 y_pos, u8 w, u8 h, u8 color, int border)
 {
     u8 end_x = x_pos+w-1;
