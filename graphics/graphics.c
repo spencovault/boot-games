@@ -36,9 +36,9 @@ void write_char(u8 character, u8 color)
     );
 }
 
-void write_str(u8* str, u8 color)
+void write_str(char* str, u8 color)
 {
-    while(str != '\0')
+    while(*str != '\0')
     {
         write_char(*str, color);
         str++;
