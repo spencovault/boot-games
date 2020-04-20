@@ -1,0 +1,3 @@
+#!/usr/bin/env bash
+make clean
+rm -f build/*.o build/*.elf build/*.img build/*.bin
