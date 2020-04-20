@@ -17,7 +17,7 @@ OBJ=$(addprefix $(BUILD_DIR)/, $(notdir $(SRC:.c=.o)))
 # making dirs searchable to make
 vpath %.c $(LIB_DIRS)
 
-all: $(OBJ)
+all: $(OBJ) $(BUILD_DIR)
 	@echo "Building bootloader.."
 	@nasm -f elf32 -Fdwarf -g boot.asm -o $(BUILD_DIR)/boot.o
 	@echo "Linking obj files..."
@@ -25,9 +25,12 @@ all: $(OBJ)
 	@echo "os.elf successfully generated"
 
 # compiling all .c files into .o files
-$(BUILD_DIR)/%.o: %.c
+$(BUILD_DIR)/%.o: %.c $(BUILD_DIR)
 	@$(CXX) $(CFLAGS) -c $< -o $@
 	@echo "$< compiled to $@"
+
+$(BUILD_DIR):
+	@mkdir -p $(BUILD_DIR)
 
 .PHONY: clean
 clean:
