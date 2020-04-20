@@ -1,3 +1,6 @@
+#ifndef RAND_H
+#define RAND_H
+
 /**
     @file rand.h
 
@@ -10,3 +13,5 @@
 
 int rand(int max);
 int rand();
+
+#endif

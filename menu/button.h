@@ -1,3 +1,5 @@
+#ifndef BUTTON_H
+#define BUTTON_H
 
 /* 
     Structure that defines how a button behaves 
@@ -40,3 +42,5 @@ void set_default_color(int color);
 
 // Sets the color that the button will display as when selected
 void set_selected_color(int color);
+
+#endif

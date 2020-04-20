@@ -1,3 +1,6 @@
+#ifndef INPUT_DEFINES_H
+#define INPUT_DEFINES_H
+
 /**
     @file defines.h
 
@@ -52,4 +55,6 @@
 #define UARROW_PRESS    0x48
 #define UARROW_RELEASE  0xC8
 #define DARROW_PRESS    0x50
-#define DARROW_RELEASE  0xD0    
+#define DARROW_RELEASE  0xD0
+
+#endif
