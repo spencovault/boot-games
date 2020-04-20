@@ -21,7 +21,7 @@ all: $(OBJ)
 	@echo "Building bootloader.."
 	@nasm -f elf32 -Fdwarf -g boot.asm -o $(BUILD_DIR)/boot.o
 	@echo "Linking obj files..."
-	@ld -melf_i386 -nostartfiles -nostdlib -Tlinker.ld -L $(BUILD_DIR) -o os.elf $(OBJ)
+	@ld -melf_i386 -nostartfiles -nostdlib -Tlinker.ld -L $(BUILD_DIR) -o $(BUILD_DIR)/os.elf $(OBJ)
 	@echo "os.elf successfully generated"
 
 # compiling all .c files into .o files
