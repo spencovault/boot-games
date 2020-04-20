@@ -45,6 +45,57 @@ void write_str(char* str, u8 color)
     }
 }
 
+void draw_box(u8 x_pos, u8 y_pos, u8 w, u8 h, u8 color, int border)
+{
+    u8 end_x = x_pos+w-1;
+    u8 end_y = y_pos+h-1;
+    
+    u8 y;
+    for(y = y_pos; y <= end_y; y++)
+    {
+        set_cursor_pos(x_pos, y);
+        u8 x;
+        for(x = x_pos; x <= end_x; x++)
+        {
+            if(border)
+            {
+                if(x == end_x && y == end_y)
+                {
+                    write_char(188, color);
+                }
+                else if(x == x_pos && y == end_y)
+                {
+                    write_char(200, color);
+                }
+                else if(x == end_x && y == y_pos)
+                {
+                    write_char(187, color);
+                }
+                else if(x == x_pos && y == y_pos)
+                {
+                    write_char(201, color);
+                }
+                else if(x == x_pos || x == end_x)
+                {
+                    write_char(186, color);
+                }
+                else if(y == y_pos || y == end_y)
+                {
+                    write_char(205, color);
+                }
+                else
+                {
+                    write_char(178, color);
+                }
+            }
+            else
+            {
+                write_char(178, color);
+            }
+        }
+    }
+}
+
 void test_render(u8 x_pos, u8 y_pos, u8 w, u8 h)
 {
     u8 end_x = x_pos+w;
@@ -54,10 +105,10 @@ void test_render(u8 x_pos, u8 y_pos, u8 w, u8 h)
     u8 color = 0;
     for(y = y_pos; y < end_y; y++)
     {
+        set_cursor_pos(x_pos, y);
         u8 x;
         for(x = x_pos; x < end_x; x++)
         {
-            set_cursor_pos(x, y);
             write_char(233, color);
             color = (color+1)%16;
         }

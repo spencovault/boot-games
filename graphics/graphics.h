@@ -20,6 +20,7 @@ void set_cursor_pos(u8 x, u8 y);
 void set_bg_color(u8 color);
 void write_char(u8 character, u8 color);
 void write_str(char* str, u8 color);
+void draw_box(u8 x_pos, u8 y_pos, u8 w, u8 h, u8 color, int border);
 void test_render(u8 x_pos, u8 y_pos, u8 w, u8 h);
 
 #endif
