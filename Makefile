@@ -18,15 +18,18 @@ OBJ=$(addprefix $(BUILD_DIR)/, $(notdir $(SRC:.c=.o)))
 vpath %.c $(LIB_DIRS)
 
 all: $(OBJ)
-	@echo 'building bootloader'
+	@echo "Building bootloader.."
 	@nasm -f elf32 -Fdwarf -g boot.asm -o $(BUILD_DIR)/boot.o
-	@echo 'linking obj files'
+	@echo "Linking obj files..."
 	@ld -melf_i386 -nostartfiles -nostdlib -Tlinker.ld -L $(BUILD_DIR) -o os.elf $(OBJ)
+	@echo "os.elf successfully generated"
 
 # compiling all .c files into .o files
 $(BUILD_DIR)/%.o: %.c
-	$(CXX) $(CFLAGS) -c $< -o $@
+	@$(CXX) $(CFLAGS) -c $< -o $@
+	@echo "$< compiled to $@"
 
+.PHONY: clean
 clean:
 	@rm -rf $(OBJ)
 	@echo "Compilation files removed"
