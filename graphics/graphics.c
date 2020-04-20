@@ -97,11 +97,11 @@ void draw_box(u8 x_pos, u8 y_pos, u8 w, u8 h, u8 color, int border)
                 {
                     write_char(201, color);
                 }
-                else if(x == x_pos || x == end_x) // horizontal lines
+                else if(x == x_pos || x == end_x) // vertical lines
                 {
                     write_char(186, color);
                 }
-                else if(y == y_pos || y == end_y) // vertical lines
+                else if(y == y_pos || y == end_y) // horizontal lines
                 {
                     write_char(205, color);
                 }
