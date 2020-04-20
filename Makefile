@@ -11,17 +11,17 @@ SRC=main.c
 SRC+=$(wildcard $(addsuffix /*.c, $(LIB_DIRS)))
 OBJ=$(addprefix $(BUILD_DIR)/, $(notdir $(SRC:.c=.o)))
 
-# adding dirs to make them searchable to make
+# making dirs searchable to make
 vpath %.c $(LIB_DIRS)
 
 all: $(OBJ)
-	# building bootloader
-	nasm -f elf32 -Fdwarf -g boot.asm -o $(BUILD_DIR)/boot.o
-	# linking .o files into one binary
+	@echo 'building bootloader'
+	@nasm -f elf32 -Fdwarf -g boot.asm -o $(BUILD_DIR)/boot.o
+	@echo 'linking obj files'
 	ld -melf_i386 -nostartfiles -nostdlib -Tlinker.ld -L $(BUILD_DIR) -o os.elf $(OBJ)
 
+# compiling all .c files into .o files
 $(BUILD_DIR)/%.o: %.c
-	# compiling all .c files into .o files
 	$(CXX) $(CFLAGS) -c $< -o $@
 
 clean:

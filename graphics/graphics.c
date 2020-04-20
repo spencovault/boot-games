@@ -46,31 +46,3 @@ void write_char(u8 character, u8 color)
     );
 }
 
-void main(void)
-{
-    // 320x200, 16 colors
-    set_video_mode(0x0D);
-
-    u8 y;
-    u8 color = 0;
-    for(y = 0; y < 20; y++)
-    {
-        u8 x;
-        for(x = 0; x < 32; x++)
-        {
-            if((x+y+color)%3)
-            {
-                set_cursor_pos(x, y);
-                write_char(233, color);
-            }
-            color = (color+1)%16;
-        }
-    }
-
-    // program end
-    while (1)
-    {
-        __asm__ ("hlt");
-    };
-}
-
