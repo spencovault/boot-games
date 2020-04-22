@@ -1,3 +1,6 @@
+#ifndef INPUT_H
+#define INPUT_H
+
 /**
     @file input.h
 
@@ -15,3 +18,5 @@
 char get_keystroke_ascii();
 char get_keystroke_scancode();
 int check_input(char input, char comparing);
+
+#endif

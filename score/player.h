@@ -1,3 +1,5 @@
+#ifndef PLAYER_H
+#define PLAYER_H
 
 struct Player {
   char initial[3];
@@ -12,3 +14,5 @@ int get_high_score(struct Player currPlayer);
 void set_initial(char *playerChar, struct Player *player);
 void set_current_score(int cScore, struct Player *player);
 void set_high_score(int hScore, struct Player *player);
+
+#endif
