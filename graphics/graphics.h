@@ -1,6 +1,9 @@
 #ifndef GRAPHICS_H
 #define GRAPHICS_H
 
+#define BOX_FILL   0b01
+#define BOX_BORDER 0b10
+
 #define RED    0x04
 #define BROWN  0x06
 #define YELLOW 0x0E
