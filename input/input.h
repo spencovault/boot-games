@@ -14,6 +14,8 @@
 /**
  * Waits for user input and returns the input
  * as an ASCII character
+ * 
+ * @return an ASCII character of type char
  */
 char get_keystroke_ascii();
 
@@ -22,6 +24,7 @@ char get_keystroke_ascii();
  * as a scancode. This is used for capturing keystrokes 
  * that are not representable with an ASCII character.
  * 
+ * @return a scan code of type char
  */
 char get_keystroke_scancode();
 
@@ -32,5 +35,7 @@ char get_keystroke_scancode();
  * 
  * @param input the input the user as entered
  * @param comparing the scan code or ASCII character that you wish to check for
+ * 
+ * @return True (1) if equal, False (0) otherwise
  */
 int check_input(char input, char comparing);
