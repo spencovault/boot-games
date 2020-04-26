@@ -1,6 +1,16 @@
 #ifndef GRAPHICS_H
 #define GRAPHICS_H
 
+/**
+ * Used to build a bitflag for box draw modes.
+ * BOX_FILL to fill interior of the box
+ * BOX_BORDER to draw a border on the perimeter of the box
+ * BOX_FILL | BOX_BORDER to fill and draw a border on the box
+ */
+#define BOX_FILL   0b01
+#define BOX_BORDER 0b10
+
+// Color codes used for 0x0D video mode
 #define RED    0x04
 #define BROWN  0x06
 #define YELLOW 0x0E
@@ -12,6 +22,7 @@
 #define WHITE  0x0F
 #define BLACK  0x00
 
+// Typedef of unsigned char for easier usage
 typedef unsigned char u8;
 
 void set_video_mode(u8 mode);
