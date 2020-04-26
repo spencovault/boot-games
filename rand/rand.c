@@ -1,4 +1,4 @@
-int rand(int max)
+int randMax(int max)
 {
 
     int seconds;
