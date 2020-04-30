@@ -19,3 +19,7 @@ In our `input.c` code, we implemented a way for the developer to grab input from
  ## Random
  
  ## Player & Scoring
+ 
+ ## Game Implentation
+ 
+ ### Menu
