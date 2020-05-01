@@ -71,3 +71,4 @@ void set_current_score(int cScore, struct Player *player);
 void set_high_score(int hScore, struct Player *player);
 
 #endif
+
