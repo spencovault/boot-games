@@ -14,5 +14,10 @@ struct Score {
     int banana;
     int watermelon; 
 };
+/**
+ * Initializes scoring variables for game start
+ * @param scoreStart refernces struct Score to initialize scoring values and multiplier
+ */
+void score_init(struct Score *scoreStart);
 
 #endif
