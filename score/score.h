@@ -27,5 +27,4 @@ int cherry_point(struct Player *player, struct Score points);
 int banana_point(struct Player *player, struct Score points);
 int watermelon_point(struct Player *player, struct Score points);
 
-
 #endif
